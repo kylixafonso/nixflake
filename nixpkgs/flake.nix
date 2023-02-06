@@ -9,9 +9,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     rnix-lsp.url = "github:nix-community/rnix-lsp";
-    nix-doom-emacs.url = "github:vlaci/nix-doom-emacs";
-    doom-emacs.url = "github:hlissner/doom-emacs/develop";
-    doom-emacs.flake = false;
   };
 
   outputs = inputs:
@@ -23,8 +20,8 @@
           modules = [
             {
               home = {
-                homeDirectory = "/home/emi";
-                username = "emi";
+                homeDirectory = "/home/kylix";
+                username = "kylix";
                 stateVersion = "22.11";
               };
             }
@@ -38,7 +35,6 @@
             ./modules/desktop-apps.nix
             ./modules/nixpkgs.nix
             ./modules/user-theme
-            ./modules/emacs.nix
           ];
         };
 
@@ -49,8 +45,8 @@
           modules = [
             {
               home = {
-                homeDirectory = "/home/emiflake";
-                username = "emiflake";
+                homeDirectory = "/home/kylix";
+                username = "kylix";
                 stateVersion = "22.11";
               };
             }
@@ -64,7 +60,6 @@
             ./modules/desktop-apps.nix
             ./modules/nixpkgs.nix
             ./modules/user-theme
-            ./modules/emacs.nix
           ];
         };
         bbu = inputs.home-manager.lib.homeManagerConfiguration {
@@ -73,8 +68,8 @@
           modules = [
             {
               home = {
-                homeDirectory = "/home/emiflake";
-                username = "emiflake";
+                homeDirectory = "/home/kylix";
+                username = "kylix";
                 stateVersion = "22.11";
               };
             }
@@ -93,17 +88,15 @@
           modules = [
             {
               home = {
-                homeDirectory = "/Users/emiflake";
-                username = "emiflake";
+                homeDirectory = "/Users/kylix";
+                username = "kylix";
                 stateVersion = "22.11";
               };
             }
-            inputs.nix-doom-emacs.hmModule
             ./modules/home-manager.nix
             ./modules/common.nix
             ./modules/zsh.nix
             ./modules/neovim.nix
-            ./modules/emacs.nix
           ];
         };
       };

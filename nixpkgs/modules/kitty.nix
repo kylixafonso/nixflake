@@ -3,10 +3,9 @@
   programs.kitty =
     {
       enable = true;
-      font.name = "PragmataPro Mono Liga";
 
       settings = {
-        font_size = 18;
+        font_size = 12;
         window_padding_width = 20;
         confirm_os_window_close = 0;
         enable_audio_bell = false;

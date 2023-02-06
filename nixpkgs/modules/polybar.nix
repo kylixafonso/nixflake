@@ -114,7 +114,7 @@
           type = "internal/date";
           interval = 1;
 
-          date = "y%Ym%md%d";
+          date = "%d/%m/%Y";
           time = "%H:%M:%S";
 
           label = "%time% %date%";

@@ -6,8 +6,8 @@
   programs.direnv.enableFishIntegration = false;
 
   home.packages = with pkgs; [
-    wget
     du-dust
+    wget
     bash
     docker
     coreutils

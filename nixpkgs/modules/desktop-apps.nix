@@ -10,21 +10,14 @@ let custom-discord =
   });
 in
 {
-  # programs.firefox.enable = true;
-
   home.packages =
     with pkgs; [
-      firefox
+      brave
       custom-discord
-      slack
       spotify
-      steam
-      yubikey-personalization-gui
-      (import inputs.nixpkgs-pin1 { inherit system; }).yubioath-desktop
       ledger-live-desktop
       pavucontrol
       vlc
-      audacity
       libreoffice
     ];
 }

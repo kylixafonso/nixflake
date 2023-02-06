@@ -38,17 +38,8 @@ in
           condition = "gitdir:~/";
           contents = defaultGitConfig // {
             user = defaultGitConfig // {
-              name = "Emily Martins";
-              email = "emi@haskell.fyi";
-            };
-          };
-        }
-        {
-          condition = "gitdir:~/work/";
-          contents = defaultGitConfig // {
-            user = defaultGitConfig.user // {
-              name = "Emily Martins";
-              email = "emily@liqwid.finance";
+              name = "Kylix Afonso";
+              email = "kylixsilva@gmail.com";
             };
           };
         }

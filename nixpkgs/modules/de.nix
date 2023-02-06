@@ -10,7 +10,6 @@
     ./rofi.nix
   ];
 
-
   xsession = {
     enable = true;
     windowManager.command = "[[ -f ~/.profile ]] && . ~/.profile";
@@ -27,7 +26,6 @@
         bspc config split_ratio          0.52
         bspc config borderless_monocle   true
         bspc config gapless_monocle      true
-        bspc rule -a Emacs state=tiled
       '';
     in
     ''

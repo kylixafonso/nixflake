@@ -5,10 +5,7 @@
   # installable anyway.
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
     "discord"
-    "slack"
     "spotify"
     "spotify-unwrapped"
-    "steam"
-    "steam-original"
   ];
 }
