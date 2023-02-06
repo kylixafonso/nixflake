@@ -32,7 +32,7 @@
       echo "de.nix startup procedure"
       ${config.services.sxhkd.package}/bin/sxhkd &
       xsetroot -cursor_name left_ptr &
-      ${pkgs.feh}/bin/feh --bg-fill "${../assets/doom-themed-wallpaper-red.png}" &
+      ${pkgs.feh}/bin/feh --bg-fill "${../assets/japan.jpg}" &
       ${config.services.polybar.package}/bin/polybar default &
       # This version actually works :)
       ${pkgs.picom}/bin/picom --shadow --vsync &
