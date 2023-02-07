@@ -2,6 +2,19 @@
 # setting up the desktop environment on a NixOS machine
 # that doesn't manage its own DE through other means.
 { config, pkgs, inputs, system, ... }:
+
+let
+  hdmiSyncScript = pkgs.writeScript "hdmiScript" ''
+    intern=$( xrandr | grep -i "edp" | cut -d" " -f1 )
+    extern=$( xrandr | grep -i "hdmi" | cut -d" " -f1 )
+
+    if xrandr | grep "$extern disconnected"; then
+      xrandr --output "$extern" --off --output "$intern" --auto
+    else
+      xrandr --output "$intern" --off --output "$extern" --auto
+    fi
+  '';
+in
 {
   imports = [
     ./sxhkd.nix
@@ -30,6 +43,7 @@
     in
     ''
       echo "de.nix startup procedure"
+      sh ${hdmiSyncScript} &&
       ${config.services.sxhkd.package}/bin/sxhkd &
       xsetroot -cursor_name left_ptr &
       ${pkgs.feh}/bin/feh --bg-fill "${../assets/japan.jpg}" &
