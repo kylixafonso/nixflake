@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
     ];
 
   boot.loader = {
@@ -21,8 +21,10 @@
   };
 
   networking = {
-    hostName = "nixos";
+    hostName = "hp-nixos";
     networkmanager.enable = true;
+    useDHCP = false;
+    interfaces.wlo1.useDHCP = true;
   };
 
   time = {
