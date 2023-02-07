@@ -24,6 +24,7 @@
     networkmanager.enable = true;
     useDHCP = false;
     interfaces.wlo1.useDHCP = true;
+    nameservers = [ "8.8.8.8" "8.8.4.4" ];
   };
 
   time = {
