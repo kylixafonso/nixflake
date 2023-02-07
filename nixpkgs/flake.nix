@@ -14,7 +14,7 @@
   outputs = inputs:
     {
       homeConfigurations = {
-        nextflake = inputs.home-manager.lib.homeManagerConfiguration rec {
+        msi = inputs.home-manager.lib.homeManagerConfiguration rec {
           pkgs = import inputs.nixpkgs { localSystem = "x86_64-linux"; };
           extraSpecialArgs = { inherit inputs; system = "x86_64-linux"; };
           modules = [
@@ -37,9 +37,7 @@
             ./modules/user-theme
           ];
         };
-
-        # Legacy system. No longer used
-        nixflake = inputs.home-manager.lib.homeManagerConfiguration rec {
+        hp = inputs.home-manager.lib.homeManagerConfiguration rec {
           pkgs = import inputs.nixpkgs { localSystem = "x86_64-linux"; };
           extraSpecialArgs = { inherit inputs; system = "x86_64-linux"; };
           modules = [
@@ -60,43 +58,6 @@
             ./modules/desktop-apps.nix
             ./modules/nixpkgs.nix
             ./modules/user-theme
-          ];
-        };
-        bbu = inputs.home-manager.lib.homeManagerConfiguration {
-          pkgs = import inputs.nixpkgs { localSystem = "x86_64-linux"; };
-          extraSpecialArgs = { inherit inputs; system = "x86_64-linux"; };
-          modules = [
-            {
-              home = {
-                homeDirectory = "/home/kylix";
-                username = "kylix";
-                stateVersion = "22.11";
-              };
-            }
-            ./modules/home-manager.nix
-            ./modules/common.nix
-            ./modules/zsh.nix
-            ./modules/neovim.nix
-            ./modules/git.nix
-            ./modules/nixpkgs.nix
-            ./modules/user-theme
-          ];
-        };
-        fidelity = inputs.home-manager.lib.homeManagerConfiguration rec {
-          pkgs = import inputs.nixpkgs { localSystem = "aarch64-darwin"; };
-          extraSpecialArgs = { inherit inputs; system = "aarch64-darwin"; };
-          modules = [
-            {
-              home = {
-                homeDirectory = "/Users/kylix";
-                username = "kylix";
-                stateVersion = "22.11";
-              };
-            }
-            ./modules/home-manager.nix
-            ./modules/common.nix
-            ./modules/zsh.nix
-            ./modules/neovim.nix
           ];
         };
       };
