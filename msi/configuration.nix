@@ -12,42 +12,12 @@ in
 {
   imports =
     [
-      /etc/nixos/hardware-configuration.nix
+      ../shared.nix
     ];
 
-  boot = {
-    kernelParams = [ "i915.force_probe=46a6" ];
-    loader = {
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot";
-      };
-      grub = {
-        enable = true;
-        devices = [ "nodev" ];
-        efiSupport = true;
-        useOSProber = true;
-        version = 2;
-      };
-    };
-  };
+  boot.kernelParams = [ "i915.force_probe=46a6" ];
 
-  networking = {
-    hostName = "msi-nixos";
-    networkmanager.enable = true;
-    useDHCP = false;
-    interfaces.wlo1.useDHCP = true;
-  };
-
-  time = {
-    timeZone = "Europe/Lisbon";
-    hardwareClockInLocalTime = true;
-  };
-
-  users.users.kylix = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-  };
+  networking.hostName = "msi-nixos";
 
   environment.systemPackages = with pkgs; [
     vim
@@ -55,22 +25,12 @@ in
     nvidia-offload
   ];
 
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    trusted-users = [ "kylix" ];
-  };
-
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
     "nvidia-x11"
     "nvidia-settings"
   ];
 
-  services.xserver = {
-    enable = true;
-    videoDrivers = [ "nvidia" ];
-    libinput.enable = true;
-    displayManager.startx.enable = true;
-  };
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware = {
     opengl.enable = true;
@@ -80,6 +40,4 @@ in
       nvidiaBusId = "PCI:1:0:0";
     };
   };
-
-  system.stateVersion = "22.11";
 }
