@@ -33,7 +33,7 @@ in
   };
 
   networking = {
-    hostName = "nixos";
+    hostName = "msi-nixos";
     networkmanager.enable = true;
     useDHCP = false;
     interfaces.wlo1.useDHCP = true;
