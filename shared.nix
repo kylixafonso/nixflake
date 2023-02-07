@@ -47,5 +47,12 @@
     displayManager.startx.enable = true;
   };
 
+  sound.enable = true;
+  # hardware.pulseaudio = {
+  # package = pkgs.pulseaudioFull;
+  # enable = true;
+  # support32Bit = true;
+  # };
+
   system.stateVersion = "22.11";
 }
