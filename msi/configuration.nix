@@ -15,7 +15,10 @@ in
       ../shared.nix
     ];
 
-  boot.kernelParams = [ "i915.force_probe=46a6" ];
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [ "i915.force_probe=46a6" ];
+  };
 
   networking.hostName = "msi-nixos";
 
@@ -34,10 +37,14 @@ in
 
   hardware = {
     opengl.enable = true;
-    nvidia.prime = {
-      offload.enable = true;
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
+    nvidia = {
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      modesetting.enable = true;
+      prime = {
+        offload.enable = true;
+        intelBusId = "PCI:0:2:0";
+        nvidiaBusId = "PCI:1:0:0";
+      };
     };
   };
 }
