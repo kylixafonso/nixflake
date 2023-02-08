@@ -51,6 +51,7 @@ in
       # This version actually works :)
       ${pkgs.picom}/bin/picom --shadow --vsync &
       sleep 1 && sh ${bspwmrc} &
+      setxkbmap -option "grp:alt_shift_toggle" -layout "us,pt" &&
       exec ${config.xsession.windowManager.bspwm.package}/bin/bspwm
     '';
 }
