@@ -3,6 +3,6 @@
 {
   home.packages =
     with pkgs; [
-      # add msi specific programs
+      jetbrains.idea-ultimate
     ];
 }

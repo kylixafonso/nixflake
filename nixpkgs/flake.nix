@@ -35,6 +35,7 @@
             ./modules/desktop-apps.nix
             ./modules/nixpkgs.nix
             ./modules/user-theme
+            ./modules/msi/desktop-apps.nix
           ];
         };
         hp = inputs.home-manager.lib.homeManagerConfiguration rec {
@@ -58,6 +59,7 @@
             ./modules/desktop-apps.nix
             ./modules/nixpkgs.nix
             ./modules/user-theme
+            ./modules/hp/desktop-apps.nix
           ];
         };
       };
