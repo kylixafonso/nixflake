@@ -7,5 +7,6 @@
     "discord"
     "spotify"
     "spotify-unwrapped"
+    "idea-ultimate"
   ];
 }
