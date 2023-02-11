@@ -19,5 +19,6 @@ in
       pavucontrol
       vlc
       libreoffice
+      stremio
     ];
 }

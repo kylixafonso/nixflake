@@ -16,6 +16,7 @@
     github-cli
     file
     cachix
+    brightnessctl
   ];
 
   home.file = {
