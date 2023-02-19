@@ -60,7 +60,6 @@
             ./modules/nixpkgs.nix
             ./modules/user-theme
             ./modules/hp/desktop-apps.nix
-            ./modules/hp/minecraft-server.nix
           ];
         };
       };
