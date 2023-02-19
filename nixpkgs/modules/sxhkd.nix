@@ -11,9 +11,9 @@ in
       "super + e" = "${config.programs.emacs.package}/bin/emacs";
       "super + space" = "${pkgs.rofi}/bin/rofi -show run";
 
-      "ctrl + shift + 2" = "${spectacle} -tcb";
-      "ctrl + shift + 3" = "${spectacle} -fcb";
-      "ctrl + shift + 4" = "${spectacle} -rcb";
+      # "ctrl + shift + 2" = "${spectacle} -tcb";
+      # "ctrl + shift + 3" = "${spectacle} -fcb";
+      "fn + p" = "${spectacle} -rcb";
 
       # Restarting things
       "super + Escape" = "pkill --signal SIGUSR1 -x sxhkd";
