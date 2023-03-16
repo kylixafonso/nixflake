@@ -20,6 +20,7 @@
         '';
       }
       dhall-vim
+      purescript-vim
       vim-nix
       gitgutter
       fugitive
@@ -66,6 +67,13 @@
               "dhall"
             ];
           };
+          purescript = {
+            command = "purescript-language-server";
+            args = [ "--stdio" ];
+            filetypes = [
+              "purescript"
+            ];
+          };
           haskell = {
             command = "haskell-language-server";
             args = [ "--lsp" ];
@@ -89,8 +97,8 @@
       set number
       set mouse=a
       set clipboard+=unnamedplus
-      set tabstop=4
-      set shiftwidth=4
+      set tabstop=2
+      set shiftwidth=2
       set expandtab
 
       vmap <leader>ca <Plug>(coc-codeaction-selected)

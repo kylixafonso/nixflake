@@ -35,7 +35,7 @@ in
         #!/bin/sh
         bspc monitor -d I II III IV V VI VII VIII IX X
         bspc config border_width         0
-        bspc config window_gap           48
+        bspc config window_gap           12
         bspc config split_ratio          0.52
         bspc config borderless_monocle   true
         bspc config gapless_monocle      true
@@ -44,6 +44,7 @@ in
     ''
       echo "de.nix startup procedure"
       sh ${hdmiSyncScript} &&
+      setxkbmap -option "grp:alt_shift_toggle" -layout "us,pt" &&
       ${config.services.sxhkd.package}/bin/sxhkd &
       xsetroot -cursor_name left_ptr &
       ${pkgs.feh}/bin/feh --bg-fill "${../assets/japan.jpg}" &
@@ -51,7 +52,6 @@ in
       # This version actually works :)
       ${pkgs.picom}/bin/picom --shadow --vsync &
       sleep 1 && sh ${bspwmrc} &
-      setxkbmap -option "grp:alt_shift_toggle" -layout "us,pt" &&
       exec ${config.xsession.windowManager.bspwm.package}/bin/bspwm
     '';
 }

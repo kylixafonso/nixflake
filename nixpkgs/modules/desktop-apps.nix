@@ -20,5 +20,7 @@ in
       vlc
       libreoffice
       stremio
+      zoom-us
+      slack
     ];
 }

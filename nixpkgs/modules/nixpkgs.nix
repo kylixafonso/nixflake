@@ -8,5 +8,7 @@
     "spotify"
     "spotify-unwrapped"
     "idea-ultimate"
+    "zoom"
+    "slack"
   ];
 }

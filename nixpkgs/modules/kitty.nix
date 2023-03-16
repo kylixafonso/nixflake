@@ -5,10 +5,11 @@
       enable = true;
 
       settings = {
-        font_size = 12;
+        font_size = 9;
         window_padding_width = 20;
         confirm_os_window_close = 0;
         enable_audio_bell = false;
+        shell = "zsh";
       };
 
       keybindings = {
