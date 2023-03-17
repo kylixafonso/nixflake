@@ -39,7 +39,7 @@
   };
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [ "nix-command" "flakes" "ca-derivations" ];
     trusted-users = [ "kylix" ];
   };
 
@@ -50,11 +50,11 @@
   };
 
   sound.enable = true;
-  # hardware.pulseaudio = {
-  # package = pkgs.pulseaudioFull;
-  # enable = true;
-  # support32Bit = true;
-  # };
+  hardware.pulseaudio = {
+    package = pkgs.pulseaudioFull;
+    enable = true;
+    support32Bit = true;
+  };
 
   system.stateVersion = "22.11";
 }

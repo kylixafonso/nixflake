@@ -16,7 +16,7 @@ in
     ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_1;
     kernelParams = [ "i915.force_probe=46a6" ];
   };
 
