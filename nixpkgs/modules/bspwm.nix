@@ -13,9 +13,18 @@
     configFile = {
       "bspwm/bspwmrc".text = ''
         #!/bin/sh
-        bspc monitor -d I II III IV V VI VII VIII IX X
+        intern=$( xrandr | grep -i "edp" | cut -d" " -f1 )
+        extern=$( xrandr | grep -i "hdmi" | cut -d" " -f1 )
+
+        if xrandr | grep "$extern disconnected"; then
+          bspc monitor "$intern" -d I II III IV V VI VII VIII IX X
+        else
+          bspc monitor "$extern" -d I II III IV V VI VII VIII IX
+          bspc monitor "$intern" -d X
+          bspc wm -O "$EXTERNAL_MONITOR" "$INTERNAL_MONITOR"
+        fi
         bspc config border_width         0
-        bspc config window_gap           35
+        bspc config window_gap           12
         bspc config split_ratio          0.52
         bspc config borderless_monocle   true
         bspc config gapless_monocle      true

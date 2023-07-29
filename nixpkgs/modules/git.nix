@@ -39,7 +39,7 @@ in
           contents = defaultGitConfig // {
             user = defaultGitConfig // {
               name = "Kylix Afonso";
-              email = "kylixsilva@gmail.com";
+              email = "kylix@liqwid.finance";
             };
           };
         }

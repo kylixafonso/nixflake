@@ -35,6 +35,8 @@ in
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  networking.firewall.allowedTCPPorts = [ 6379 ];
+
   hardware = {
     opengl.enable = true;
     nvidia = {

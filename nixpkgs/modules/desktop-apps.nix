@@ -22,5 +22,11 @@ in
       stremio
       zoom-us
       slack
+      vscode
+      staruml
+      gimp
+      dosbox
+      foxitreader
+      openvpn
     ];
 }

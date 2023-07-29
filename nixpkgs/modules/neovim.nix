@@ -48,6 +48,7 @@
       enable = true;
       package = pkgs.vimPlugins.coc-nvim;
       settings = {
+        inlayHint.enable = true;
         "suggest.noselect" = true;
         "suggest.enablePreview" = true;
         "suggest.enablePreselect" = false;
@@ -55,6 +56,12 @@
         "coc.preferences.formatOnSaveFiletypes" = [ "nix" ];
 
         languageserver = {
+          ccls = {
+            command = "ccls";
+            filetypes = [
+              "c"
+            ];
+          };
           nix = {
             command = "${inputs.rnix-lsp.defaultPackage.${system}}/bin/rnix-lsp";
             filetypes = [

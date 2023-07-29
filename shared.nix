@@ -35,7 +35,7 @@
 
   users.users.kylix = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "docker" "wheel" ];
   };
 
   nix.settings = {
@@ -43,11 +43,26 @@
     trusted-users = [ "kylix" ];
   };
 
-  services.xserver = {
-    enable = true;
-    libinput.enable = true;
-    displayManager.startx.enable = true;
+  services = {
+    power-profiles-daemon.enable = false;
+    thermald.enable = true;
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_BOOST_ON_AC = 1;
+        CPU_BOOST_ON_BAT = 0;
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      };
+    };
+    xserver = {
+      enable = true;
+      libinput.enable = true;
+      displayManager.startx.enable = true;
+    };
   };
+
+  virtualisation.docker.enable = true;
 
   sound.enable = true;
   hardware.pulseaudio = {
