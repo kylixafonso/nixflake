@@ -17,6 +17,7 @@
     file
     cachix
     brightnessctl
+    glibc
   ];
 
   home.file = {

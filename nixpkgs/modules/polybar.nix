@@ -24,6 +24,8 @@
         "bar/default" = {
           enable-ipc = true;
 
+          monitor = "\${env:MONITOR:}";
+
           width = "100%";
           height = 36;
           padding-left = 6;
@@ -63,21 +65,17 @@
         "module/bspwm" = {
           type = "internal/bspwm";
 
-          label-focused = "%index%";
           label-focused-foreground = selected;
           label-focused-background = background;
           label-focused-underline = selected;
           label-focused-padding = 1;
 
-          label-occupied = "%index%";
           label-occupied-foreground = lightgray;
           label-occupied-padding = 1;
 
-          label-urgent = "%index%!";
           label-urgent-background = emphasis;
           label-urgent-padding = 1;
 
-          label-empty = "%index%";
           label-empty-foreground = lightgray;
           label-empty-padding = 1;
         };
