@@ -18,6 +18,14 @@
     cachix
     brightnessctl
     glibc
+    telepresence2
+    pgcli
+    kubectl
+    gcc
+    gnumake
+    valgrind
+    gnupg
+    pinentry
   ];
 
   home.file = {

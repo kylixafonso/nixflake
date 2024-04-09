@@ -39,8 +39,11 @@ in
           contents = defaultGitConfig // {
             user = defaultGitConfig // {
               name = "Kylix Afonso";
-              email = "kylix@liqwid.finance";
+              email = "kylixafonso@gmail.com";
+              signingKey = "751CD9B4011E0F11";
             };
+            commit.gpgsign = true;
+            tap.gpgsign = true;
           };
         }
       ];

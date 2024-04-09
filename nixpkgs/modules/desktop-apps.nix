@@ -22,5 +22,6 @@ in
       openvpn
       libreoffice
       staruml
+      yubikey-manager-qt
     ];
 }
